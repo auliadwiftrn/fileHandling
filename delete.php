@@ -15,3 +15,4 @@ for($i = 0; $i<count($baris)-1; $i++) {
 file_put_contents($file, $databaru);
 
 header('location:baca.php');
+?>
