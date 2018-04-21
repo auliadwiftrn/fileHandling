@@ -38,7 +38,7 @@ input {
   margin-bottom: 0.5rem;
 }
 input:focus {
-  outline: 3px solid gold;
+  outline: 2px solid gold;
 }
 
 @media (min-width: 400px) {
