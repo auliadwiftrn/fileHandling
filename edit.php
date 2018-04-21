@@ -17,51 +17,47 @@ for($i = 0; $i<count($baris)-1; $i++) {
     <link rel="stylesheet" type="text/css" href="formStyle.css">
     <title>Mencoba Agar Bisa</title>
 </head>
-<body style="background-color:ivory;">
+<body>
     <center><h1 style="margin-top: 5%; font-family:verdana;">BUKU TELEPON KU</h1>
         <h2 style="margin-top: 2%; font-family:verdana;">Mau edit? Silahkan diubah :)</h2></center>
-        <form action="" method="POST">
+        <form action="#" method="POST">
             <fieldset>
-
-
-<?php
-    if (isset($_POST['submit'])) {
-            $nama = $_POST['nama'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $data = $nama  . "|F|" . 
-                    $email . "|F|" .
-                    $phone ;
-            $baris[$i] = $data; 
-        }
-    }
-    $databaru .= $baris[$i] . "[R]";
-}
-?>
                 <legend><h2>Ubah data</h2></legend>
                 <label for="nama" class="nama">Nama </label>
-                <input name="nama" type="text" value="<?php echo $_GET['nama'] ?>">
+                <input name="nama" type="text" value="<?php echo $kolom[0]?>">
 
                 <label for="email" class="email">Email </label>
-                <input name="email" type="email" value="<?php echo $_GET['email'] ?>">
+                <input name="email" type="email" value="<?php echo $kolom[1]?>">
 
                 <label for="phone" class="phone">Phone </label>
-                <input name="phone" type="tel" value="<?php echo $_GET['phone'] ?>">
+                <input name="phone" type="tel" value="<?php echo $kolom[2]?>">
 
-                <button>Save Changes!</button>
+                <input type="submit" name="submit" value="Simpan Update" style="float:right;">
 
                 <br>
-                <p><?php echo isset($pesan) ? $pesan : "" ?></p>
                 
             </fieldset>
         </form>
 </body>
 </html>
 
-
 <?php
-if (isset($_POST['submit'])) {
+        if (isset($_POST["submit"])) {
+            $nama = $_POST["nama"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $data = $nama  . "|F|" . 
+                    $email . "|F|" .
+                    $phone;
+            $baris[$i] = $data; 
+        }
+    }
+    $databaru .= $baris[$i] . "[R]";
+}
+
+if (isset($_POST["submit"])) {
     file_put_contents($file, $databaru);
     header('location:baca.php');
 }
+?>
 ?>
