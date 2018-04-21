@@ -57,7 +57,7 @@ echo "<h1 style='max-width: 800px; font-size: 50px; margin-top: 5%; padding: 2% 
 ?>
 </div>
 <form>
-<label style="margin-left: 15%; font-size: 40px; font-family: verdana;" for="dataLagi" class="dataLagi">Mau input data lagi? </label><br>
+<label style="margin-left: 15%; font-size: 40px; font-family: verdana;" for="dataLagi" class="dataLagi">Mau input data lagi?</label><br>
 <input class="MyButton" type="button" value="Klik Disini" onclick="window.location.href='form.html'" />
 </form>
 </body>
