@@ -81,5 +81,3 @@ MariaDB [butel]> SELECT * FROM bukutelepon;
 
 MariaDB [butel]> QUIT
 Bye
-
-C:\xampp\mysql\bin>
