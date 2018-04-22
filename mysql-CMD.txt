@@ -1,0 +1,85 @@
+Microsoft Windows [Version 10.0.16299.371]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd\
+
+C:\>cd xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password: **********
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 105
+Server version: 10.1.30-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| butel              |
+| information_schema |
+| mysql              |
+| pemweb             |
+| performance_schema |
+| phonebook          |
+| phpmyadmin         |
+| test               |
++--------------------+
+8 rows in set (0.00 sec)
+
+MariaDB [(none)]> USE butel
+Database changed
+MariaDB [butel]> CREATE TABLE bukutelepon (
+    -> id int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    -> nama VARCHAR(60) NOT NULL,
+    -> email VARCHAR(60) NOT NULL,
+    -> phone VARCHAR(20) NOT NULL,
+    -> alamat VARCHAR(100) NOT NULL
+    -> ) ENGINE=InnoDB;
+Query OK, 0 rows affected (0.39 sec)
+
+MariaDB [butel]> SHOW TABLES;
++-----------------+
+| Tables_in_butel |
++-----------------+
+| bukutelepon     |
++-----------------+
+1 row in set (0.00 sec)
+
+MariaDB [butel]> SELECT * FROM phonebook
+    -> ;
+ERROR 1146 (42S02): Table 'butel.phonebook' doesn't exist
+MariaDB [butel]> SELECT * FROM bukutelepon
+    -> ;
+Empty set (0.00 sec)
+
+MariaDB [butel]> DESC bukutelepon;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int(10)      | NO   | PRI | NULL    | auto_increment |
+| nama   | varchar(60)  | NO   |     | NULL    |                |
+| email  | varchar(60)  | NO   |     | NULL    |                |
+| phone  | varchar(20)  | NO   |     | NULL    |                |
+| alamat | varchar(100) | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.03 sec)
+
+MariaDB [butel]> SELECT * FROM bukutelepon;
++----+-----------+------------------------+--------------+-----------------------+
+| id | nama      | email                  | phone        | alamat                |
++----+-----------+------------------------+--------------+-----------------------+
+|  2 | qq        | qqq@gmsil.com          | 0999987272   | Jl. Homelemele No 900 |
+|  3 | pitul     | wsws@gmail.com         | 0988888888   | Jl. Homelemele No 900 |
+|  4 | aulia     | auliadwi26@gmail.com   | 0999987272   | Jl. Panjaitan         |
+|  5 | firdausia | firdaindah10@gmail.com | 087776754739 | Jl. Panjaitan No. 15  |
++----+-----------+------------------------+--------------+-----------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [butel]> QUIT
+Bye
+
+C:\xampp\mysql\bin>
